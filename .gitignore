@@ -2,3 +2,4 @@ notebooks/data
 notebooks/cifar10_resnet50
 notebooks/cifar10_vit
 notebooks/cifar10_efficientnet
+notebooks/cifar10_resnet50_1
