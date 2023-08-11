@@ -9,11 +9,12 @@ This project aims to evaluate and compare the performance of different deep lear
 
 **1. Fine-tuning ResNet50**: Two methods were explored:            
 
-**a)** Initializing the network with a pretrained ResNet50.            
+    **a)** Initializing the network with a pretrained ResNet50.            
 
-**b)** Using ResNet50 as a fixed feature extractor and only training the final fully connected layer.         
+    **b)** Using ResNet50 as a fixed feature extractor and only training the final fully connected layer.         
 
-**2. Fine-tuning Vision Transformer (ViT).**
+**2. Fine-tuning Vision Transformer (ViT).**            
+
 **3. Benchmarking EfficientNet-B0.**
 
 
@@ -47,9 +48,9 @@ Benchmarking: Evaluation without specific fine-tuning. At first the goal was to 
 
 The models were evaluated using accuracy as the key metric.
 
-**ViT Fine-Tuning**: Accuracy: 92.37%
-**ResNet Fine-Tuning**: Accuracy: 79.32%
-**ResNet Feature Extraction**: Accuracy: 46.20%
+**ViT Fine-Tuning**: Accuracy: 92.37%                
+**ResNet Fine-Tuning**: Accuracy: 79.32%                
+**ResNet Feature Extraction**: Accuracy: 46.20%              
 
 
 ## Insights
@@ -77,9 +78,7 @@ Please refer to the notebooks for each model:
 
 A strategic approach to further enhance the transfer learning process could involve a two-phase training method. In the initial phase, the feature extractor can be frozen, allowing only the head (the final fully connected layer) to be trained. This will enable the model to adapt to the specific task without altering the pre-learned features.           
 
-Once this first phase is complete, the subsequent phase can commence by unfreezing either the entire feature extractor or selected parts of it. By setting a reduced learning rate, the model can continue training, allowing for a more refined fine-tuning of the previously frozen layers. This method can potentially lead to a more nuanced adaptation of the pre-trained model to the target task, aligning with the principles of Quantized Transfer Learning.        
-
-[PyTorch Quantized Transfer Learning Tutorial](https://pytorch.org/tutorials/intermediate/quantized_transfer_learning_tutorial.html)
+Once this first phase is complete, the subsequent phase can commence by unfreezing either the entire feature extractor or selected parts of it. By setting a reduced learning rate, the model can continue training, allowing for a more refined fine-tuning of the previously frozen layers. This method can potentially lead to a more nuanced adaptation of the pre-trained model to the target task, aligning with the principles of [Quantized Transfer Learning Tutorial](https://pytorch.org/tutorials/intermediate/quantized_transfer_learning_tutorial.html).
 
 ## Acknowledgments
 
