@@ -67,10 +67,10 @@ The models were evaluated using accuracy as the key metric.
 
 
 Please refer to the notebooks for each model:
-    
-- Efficientnet.ipynb        
+         
 - Resnet50.ipynb            
-- vit.ipynb         
+- vit.ipynb      
+- Efficientnet.ipynb         
 
 **Note**: Fine-tuned models are not included in the GitHub repo due to size limits.
 
