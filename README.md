@@ -7,15 +7,17 @@ Benchmarking finetuned architectures ResNet-50, ViT, and EfficientNet on the CIF
 This project aims to evaluate and compare the performance of different deep learning models on the CIFAR10 dataset by employing various transfer learning techniques. The models explored include ResNet50, Vision Transformer (ViT), and EfficientNet-B0. The key objectives are:                
 
 
-**1. Fine-tuning ResNet50**: Two methods were explored:            
+**1. Fine-tuning ResNet50**:            
 
-    **a)** Initializing the network with a pretrained ResNet50.            
+Two methods were explored:             
 
-    **b)** Using ResNet50 as a fixed feature extractor and only training the final fully connected layer.         
+**1.1** Initializing the network with a pretrained ResNet50.            
 
-**2. Fine-tuning Vision Transformer (ViT).**            
+**1.2** Using ResNet50 as a fixed feature extractor and only training the final fully connected layer.         
 
-**3. Benchmarking EfficientNet-B0.**
+**2. Fine-tuning Vision Transformer (ViT)**            
+
+**3. Benchmarking EfficientNet-B0**
 
 
 ## Technologies Used
@@ -48,7 +50,7 @@ Benchmarking: Evaluation without specific fine-tuning. At first the goal was to 
 
 The models were evaluated using accuracy as the key metric.
 
-**ViT Fine-Tuning**: Accuracy: 92.37%                
+**ViT Fine-Tuning**: Accuracy: 93.43%                
 **ResNet Fine-Tuning**: Accuracy: 79.32%                
 **ResNet Feature Extraction**: Accuracy: 46.20%              
 
@@ -56,7 +58,8 @@ The models were evaluated using accuracy as the key metric.
 ## Insights
 
 - ViT achieved 90% accuracy with only 3 epochs and 5k data, whereas ResNet50 only reached 30% with similar settings.          
-- ViT reached 95% accuracy with 6 epochs and the entire 50k dataset.           
+- ViT reached  93.43% accuracy with 6 epochs and the entire dataset. Showing an increased of approximately 3.12% reflecting the improvement obtained through using more data and more training epochs.
+
 - ResNet50's fine-tuning reached 79.32% accuracy, but feature extraction only yielded 46.20%.       
 
 
