@@ -1,23 +1,28 @@
-# CIFAR10 Transfer Learning Benchmarks: A Comparative Study
+# Transfer Learning Benchmarks: A Comparative Study of Image Classification on CIFAR10 
 
-Benchmarking finetuned architectures ResNet-50, ViT, and EfficientNet on the CIFAR-10.
+
+The CIFAR-10 dataset consists of 60,000 32x32 color images in 10 different classes, with 6,000 images per class. The dataset is divided into 50,000 training images and 10,000 testing images. The classes include objects like cars, birds, dogs, and ships, among others.              
+
+In this project, we will benchmark three distinct deep learning architectures—ResNet-50, Vision Transformer (ViT), and EfficientNet—on the CIFAR-10 dataset. ResNet-50, originally trained on the ImageNet dataset, consists of 50 layers and introduces the concept of residual connections. Vision Transformer (ViT) is a recent innovation that applies transformers to image classification and is also pretrained on ImageNet. EfficientNet provides a systematic way to scale up networks in a balanced manner and has been trained on several large-scale datasets.             
+
+### Transfer learning         
+
+Transfer learning is a machine learning technique where a model developed for a particular task is reused as the starting point for a model on a second task. It is a popular approach in deep learning where pretrained models are adapted for a specific but related problem. By leveraging knowledge gained from original training on extensive and diverse datasets, transfer learning enables the model to achieve high performance on new tasks without needing to train from scratch. In the context of various projects, including the one focused on CIFAR-10, transfer learning can be implemented using two main methods:
+
+- **Finetuning the pre-trained model**: Instead of random initialization, the network is initialized with a pretrained network. The rest of the training proceeds as usual, allowing the model to fine-tune the pretrained features to the specific new task.              
+
+- **Pre-trained model as Fixed Feature Extractor**: In this method, the weights for all of the network except the final fully connected layer are frozen. This last fully connected layer is replaced with a new one with random weights, and only this layer is trained, treating the pretrained network as a fixed feature extractor.              
+
 
 ## Project Overview
 
 This project aims to evaluate and compare the performance of different deep learning models on the CIFAR10 dataset by employing various transfer learning techniques. The models explored include ResNet50, Vision Transformer (ViT), and EfficientNet-B0. The key objectives are:                
 
 
-**1. Fine-tuning ResNet50**:            
-
-Two methods were explored:             
-
-**1.1** Initializing the network with a pretrained ResNet50.            
-
-**1.2** Using ResNet50 as a fixed feature extractor and only training the final fully connected layer.         
-
-**2. Fine-tuning Vision Transformer (ViT)**            
-
-**3. Benchmarking EfficientNet-B0**
+**1. Fine-tuning ResNet50**        
+**2. ResNet50 as a Fixed Feature Extractor**                
+**3. Fine-tuning Vision Transformer (ViT)**             
+**4. Benchmarking EfficientNet-B0**                
 
 
 ## Technologies Used
@@ -43,16 +48,19 @@ Fine-Tuning: Training on CIFAR10.
 
 ### EfficientNet-B0
 
-Benchmarking: Evaluation without specific fine-tuning. At first the goal was to finetune efficientnet_V2 but the model was too large and we encounter GPU out of memory error. 
+Fine-Tuning on CIFAR10. The efficientnet_V2 model could be too large to be fine-tuned on a typical desktop with one GPU, similar to what was used for this project. 
 
 
 ## Results
 
 The models were evaluated using accuracy as the key metric.
 
-**ViT Fine-Tuning**: Accuracy: 93.43%                
-**ResNet Fine-Tuning**: Accuracy: 79.32%                
-**ResNet Feature Extraction**: Accuracy: 46.20%              
+**Accuracy:**            
+
+**ViT Fine-Tuning**: 93.43%                
+**ResNet Fine-Tuning**: 79.32%     
+**EfficientNet-B0 Fine-Tuning**: 73.64%          
+**ResNet Feature Extraction**: 46.20%              
 
 
 ## Insights
@@ -72,7 +80,7 @@ Please refer to the notebooks for each model:
 - vit.ipynb      
 - Efficientnet.ipynb         
 
-**Note**: Fine-tuned models are not included in the GitHub repo due to size limits.
+**Note**: Fine-tuned models are not included in the GitHub repo due to github size limits.
 
 
 ## Potential Next Step
